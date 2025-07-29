@@ -1,0 +1,174 @@
+<!-- mapping.xml bean io mapping for HeaderBlock -->
+<beanio xmlns="http://www.beanio.org/2012/03"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.beanio.org/2012/03 http://www.beanio.org/2012/03/mapping.xsd">
+
+
+    <stream name="headerStream" format="delimited">
+
+        <parser class ="org.example.parser.CustomDelimitedParserFactory">
+          <property name="customDelimiter" value="~~"/>
+        </parser>
+        <typeHandler class="org.example.handler.ArrayBlock1Handler" name="arrayBlock1Handler"/>
+        <typeHandler class="org.example.handler.ArrayBlock2Handler" name="arrayBlock2Handler"/>
+        <record name="HeaderBlock" class="org.example.code.HeaderBlock">
+            <field name="field1" minOccurs="0" nillable="true"/>
+            <field name="field2" minOccurs="0" nillable="true"/>
+            <field name="field3" minOccurs="0" nillable="true"/>
+            <field name="field4" minOccurs="0" nillable="true"/>
+            <field name="field5" minOccurs="0" nillable="true"/>
+            <field name="field6" minOccurs="0" nillable="true"/>
+            <field name="field7" minOccurs="0" nillable="true"/>
+            <field name="field8" minOccurs="0" nillable="true"/>
+            <field name="field9" minOccurs="0" nillable="true"/>
+            <field name="field10" minOccurs="0" nillable="true"/>
+            <field name="field11" minOccurs="0" nillable="true"/>
+            <field name="field12" minOccurs="0" nillable="true"/>
+            <field name="field13" minOccurs="0" nillable="true"/>
+            <field name="field14" minOccurs="0" nillable="true"/>
+            <field name="field15" minOccurs="0" nillable="true"/>
+            <field name="field16" minOccurs="0" nillable="true"/>
+            <field name="field17" minOccurs="0" nillable="true"/>
+            <field name="field18" minOccurs="0" nillable="true"/>
+            <field name="field19" minOccurs="0" nillable="true"/>
+            <field name="field20" minOccurs="0" nillable="true"/>
+            <field name="field21" minOccurs="0" nillable="true"/>
+            <field name="field22" minOccurs="0" nillable="true"/>
+            <field name="field23" minOccurs="0" nillable="true"/>
+            <field name="field24" minOccurs="0" nillable="true"/>
+            <field name="field25" minOccurs="0" nillable="true"/>
+            <field name="field26" minOccurs="0" nillable="true"/>
+            <field name="field27" minOccurs="0" nillable="true"/>
+            <field name="field28" minOccurs="0" nillable="true"/>
+            <field name="field29" minOccurs="0" nillable="true"/>
+            <field name="field30" minOccurs="0" nillable="true"/>
+            <field name="field31" minOccurs="0" nillable="true"/>
+            <field name="field32" minOccurs="0" nillable="true"/>
+            <field name="field33" minOccurs="0" nillable="true"/>
+            <field name="field34" minOccurs="0" nillable="true"/>
+            <field name="field35" minOccurs="0" nillable="true"/>
+            <field name="field36" minOccurs="0" nillable="true"/>
+            <field name="field37" minOccurs="0" nillable="true"/>
+            <field name="field38" minOccurs="0" nillable="true"/>
+            <field name="field39" minOccurs="0" nillable="true"/>
+            <field name="field40" minOccurs="0" nillable="true"/>
+            <field name="field41" minOccurs="0" nillable="true"/>
+            <field name="field42" minOccurs="0" nillable="true"/>
+            <field name="field43" minOccurs="0" nillable="true"/>
+            <field name="field44" minOccurs="0" nillable="true"/>
+            <field name="field45" minOccurs="0" nillable="true"/>
+            <field name="field46" minOccurs="0" nillable="true"/>
+            <field name="field47" minOccurs="0" nillable="true"/>
+            <field name="field48" minOccurs="0" nillable="true"/>
+            <field name="field49" minOccurs="0" nillable="true"/>
+            <field name="field50" minOccurs="0" nillable="true"/>
+            <field name="field51" minOccurs="0" nillable="true"/>
+            <field name="field52" minOccurs="0" nillable="true"/>
+            <field name="field53" minOccurs="0" nillable="true"/>
+            <field name="field54" minOccurs="0" nillable="true"/>
+            <field name="field55" minOccurs="0" nillable="true"/>
+            <field name="field56" minOccurs="0" nillable="true"/>
+            <field name="field57" minOccurs="0" nillable="true"/>
+            <field name="field58" minOccurs="0" nillable="true"/>
+            <field name="field59" minOccurs="0" nillable="true"/>
+            <field name="field60" minOccurs="0" nillable="true"/>
+            <field name="field61" minOccurs="0" nillable="true"/>
+            <field name="field62" minOccurs="0" nillable="true"/>
+            <field name="field63" minOccurs="0" nillable="true"/>
+            <field name="field64" minOccurs="0" nillable="true"/>
+            <field name="field65" minOccurs="0" nillable="true"/>
+            <field name="field66" minOccurs="0" nillable="true"/>
+            <field name="field67" minOccurs="0" nillable="true"/>
+            <field name="field68" minOccurs="0" nillable="true"/>
+            <field name="field69" minOccurs="0" nillable="true"/>
+            <field name="field70" minOccurs="0" nillable="true"/>
+            <field name="field71" minOccurs="0" nillable="true"/>
+            <field name="field72" minOccurs="0" nillable="true"/>
+            <field name="field73" minOccurs="0" nillable="true"/>
+            <field name="field74" minOccurs="0" nillable="true"/>
+            <field name="field75" minOccurs="0" nillable="true"/>
+            <field name="field76" minOccurs="0" nillable="true"/>
+            <field name="field77" minOccurs="0" nillable="true"/>
+            <field name="field78" minOccurs="0" nillable="true"/>
+            <field name="field79" minOccurs="0" nillable="true"/>
+            <field name="field80" minOccurs="0" nillable="true"/>
+            <field name="field81" minOccurs="0" nillable="true"/>
+            <field name="field82" minOccurs="0" nillable="true"/>
+            <field name="field83" minOccurs="0" nillable="true"/>
+            <field name="field84" minOccurs="0" nillable="true"/>
+            <field name="field85" minOccurs="0" nillable="true"/>
+            <field name="field86" minOccurs="0" nillable="true"/>
+            <field name="field87" minOccurs="0" nillable="true"/>
+            <field name="field88" minOccurs="0" nillable="true"/>
+            <field name="field89" minOccurs="0" nillable="true"/>
+            <field name="field90" minOccurs="0" nillable="true"/>
+            <field name="field91" minOccurs="0" nillable="true"/>
+            <field name="field92" minOccurs="0" nillable="true"/>
+            <field name="field93" minOccurs="0" nillable="true"/>
+            <field name="field94" minOccurs="0" nillable="true"/>
+            <field name="field95" minOccurs="0" nillable="true"/>
+            <field name="field96" minOccurs="0" nillable="true"/>
+            <field name="field97" minOccurs="0" nillable="true"/>
+            <field name="field98" minOccurs="0" nillable="true"/>
+            <field name="field99" minOccurs="0" nillable="true"/>
+            <field name="field100" minOccurs="0" nillable="true"/>
+            <field name="field101" minOccurs="0" nillable="true"/>
+            <field name="field102" minOccurs="0" nillable="true"/>
+            <field name="field103" minOccurs="0" nillable="true"/>
+            <field name="field104" minOccurs="0" nillable="true"/>
+            <field name="field105" minOccurs="0" nillable="true"/>
+            <field name="field106" minOccurs="0" nillable="true"/>
+            <field name="field107" minOccurs="0" nillable="true"/>
+            <field name="field108" minOccurs="0" nillable="true"/>
+            <field name="field109" minOccurs="0" nillable="true"/>
+            <field name="field110" minOccurs="0" nillable="true"/>
+            <field name="field111" minOccurs="0" nillable="true"/>
+            <field name="field112" minOccurs="0" nillable="true"/>
+            <field name="field113" minOccurs="0" nillable="true"/>
+            <field name="field114" minOccurs="0" nillable="true"/>
+            <field name="field115" minOccurs="0" nillable="true"/>
+            <field name="field116" minOccurs="0" nillable="true"/>
+            <field name="field117" minOccurs="0" nillable="true"/>
+            <field name="field118" minOccurs="0" nillable="true"/>
+            <field name="field119" minOccurs="0" nillable="true"/>
+            <field name="field120" minOccurs="0" nillable="true"/>
+            <field name="field121" minOccurs="0" nillable="true"/>
+
+            <segment name="nestedBlock1" class="org.example.code.NestedBlock1" minOccurs="0" nillable="true">
+                <!-- Add NestedBlock1 fields here -->
+                <field name="nBlock1" minOccurs="0" nillable="true"/>
+                <field name="nBlock2" minOccurs="0" nillable="true"/>
+                <field name="nBlock3" minOccurs="0" nillable="true"/>
+                <field name="nBlock4" minOccurs="0" nillable="true"/>
+                <field name="nBlock5" minOccurs="0" nillable="true"/>
+                <field name="nBlock6" minOccurs="0" nillable="true"/>
+                <field name="nBlock7" minOccurs="0" nillable="true"/>
+                <field name="nBlock8" minOccurs="0" nillable="true"/>
+                <field name="nBlock9" minOccurs="0" nillable="true"/>
+                <field name="nBlock10" minOccurs="0" nillable="true"/>
+                <field name="nBlock11" minOccurs="0" nillable="true"/>
+                <field name="nBlock12" minOccurs="0" nillable="true"/>
+                <field name="nBlock13" minOccurs="0" nillable="true"/>
+                <field name="nBlock14" minOccurs="0" nillable="true"/>
+                <field name="nBlock15" minOccurs="0" nillable="true"/>
+            </segment>
+            <field name="arrayBlock1" lazy="true" typeHandler="arrayBlock1Handler" type="java.util.List" minOccurs="0" nillable="true"/>
+            <field name="arrayBlock2" lazy="true" typeHandler="arrayBlock2Handler" type="java.util.List" minOccurs="0" nillable="true"/>
+            <segment name="nestedBlock2" class="org.example.code.NestedBlock2" minOccurs="0" nillable="true">
+                <!-- Add NestedBlock2 fields here -->
+                <field name="n2Block1" minOccurs="0" nillable="true"/>
+                <field name="n2Block2" minOccurs="0" nillable="true"/>
+                <field name="n2Block3" minOccurs="0" nillable="true"/>
+                <field name="n2Block4" minOccurs="0" nillable="true"/>
+                <field name="n2Block5" minOccurs="0" nillable="true"/>
+                <field name="n2Block6" minOccurs="0" nillable="true"/>
+                <field name="n2Block7" minOccurs="0" nillable="true"/>
+                <field name="n2Block8" minOccurs="0" nillable="true"/>
+                <field name="n2Block9" minOccurs="0" nillable="true"/>
+                <field name="n2Block10" minOccurs="0" nillable="true"/>
+                <field name="n2Block11" minOccurs="0" nillable="true"/>
+                <field name="n2Block12" minOccurs="0" nillable="true"/>
+            </segment>
+        </record>
+    </stream>
+</beanio>
