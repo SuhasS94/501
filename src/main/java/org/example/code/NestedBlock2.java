@@ -1,5 +1,9 @@
 package org.example.code;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class NestedBlock2 {
     public String n2Block1;
     public String n2Block2;

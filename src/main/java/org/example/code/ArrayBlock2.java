@@ -1,5 +1,10 @@
 package org.example.code;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class ArrayBlock2 {
     public String a2Block1;
     public String a2Block2;

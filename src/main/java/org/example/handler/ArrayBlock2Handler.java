@@ -1,55 +1,52 @@
 package org.example.handler;
-
-import org.beanio.types.TypeHandler;
-
-
-import org.beanio.types.TypeHandler;
+import org.beanio.types.TypeConversionException;
+import org.example.code.ArrayBlock1;
 import org.example.code.ArrayBlock2;
+import org.beanio.types.TypeHandler;
+import java.util.*;
 
-import java.util.ArrayList;
-import java.util.List;
 public class ArrayBlock2Handler implements TypeHandler {
 
     @Override
-    public Object parse(String text) {
+    public Object parse(String text) throws TypeConversionException {
         List<ArrayBlock2> list = new ArrayList<>();
+        if (text == null || text.isEmpty()) return list;
 
-        if (text == null || text.trim().isEmpty()) return list;
+        String[] tokens = text.split("~~");
+        boolean started = false;
 
-        String content = text.trim();
-        if (content.startsWith("[[") && content.endsWith("]]")) {
-            content = content.substring(2, content.length() - 2);
-        }
+        for (String token : tokens) {
+            if ("B".equals(token)) {
+                started = true;
+                continue;
+            }
+            if (!started) continue;
+            if ("B".equals(token)) break; // End marker
+            if (token.isEmpty()) continue;
 
-        String[] blocks = content.split("\\Q{{\\E");
-        for (String block : blocks) {
-            block = block.trim();
-            if (block.endsWith("}}")) {
-                block = block.substring(0, block.length() - 2);
-            }
-            String[] fields = block.split("~~", -1);
-            if (fields.length >= 8 && fields[0].isEmpty()) {
-                fields = java.util.Arrays.copyOfRange(fields, 1, fields.length);
-            }
-            if (fields.length >= 7) {
-                ArrayBlock2 ab = new ArrayBlock2();
-                ab.a2Block1 = fields[0];
-                ab.a2Block2 = fields[1];
-                ab.a2Block3 = fields[2];
-                ab.a2Block4 = fields[3];
-                ab.a2Block5 = fields[4];
-                ab.a2Block6 = fields[5];
-                ab.a2Block7 = fields[6];
-                list.add(ab);
-            }
+            String[] parts = token.split("\\|", -1); // Keep empty fields
+            ArrayBlock2 ab2 = new ArrayBlock2();
+            ab2.setA2Block1(parts.length > 0 ? parts[0] : "");
+            ab2.setA2Block2(parts.length > 1 ? parts[1] : "");
+            ab2.setA2Block3(parts.length > 2 ? parts[2] : "");
+            ab2.setA2Block4(parts.length > 3 ? parts[3] : "");
+            ab2.setA2Block5(parts.length > 4 ? parts[4] : "");
+            ab2.setA2Block6(parts.length > 5 ? parts[5] : "");
+            ab2.setA2Block7(parts.length > 6 ? parts[6] : "");
+            list.add(ab2);
         }
 
         return list;
     }
 
+
+    private String getField(String[] fields, int index) {
+        return index < fields.length ? fields[index] : "";
+    }
+
     @Override
     public String format(Object value) {
-        return null; // Not used in unmarshalling
+        return null;
     }
 
     @Override

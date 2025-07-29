@@ -28,6 +28,12 @@
             <artifactId>beanio</artifactId>
             <version>3.2.1</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.38</version>
+        </dependency>
 
         <!-- Optional: JUnit 5 if you want to write unit tests -->
         <!--

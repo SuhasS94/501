@@ -1,55 +1,47 @@
 package org.example.handler;
 
+import org.beanio.types.TypeConversionException;
 import org.beanio.types.TypeHandler;
 
-import org.beanio.types.TypeHandler;
 import org.example.code.ArrayBlock1;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 public class ArrayBlock1Handler implements TypeHandler {
 
     @Override
-    public Object parse(String text) {
+    public Object parse(String text) throws TypeConversionException {
         List<ArrayBlock1> list = new ArrayList<>();
+        if (text == null || text.isEmpty()) return list;
 
-        if (text == null || text.trim().isEmpty()) return list;
+        String[] tokens = text.split("~~");
+        for (String token : tokens) {
+            if ("B".equals(token)) break; // Stop at start of next block
+            if (token.isEmpty() || "A".equals(token)) continue;
 
-        String content = text.trim();
-        if (content.startsWith("[[") && content.endsWith("]]")) {
-            content = content.substring(2, content.length() - 2);
-        }
-
-        String[] blocks = content.split("\\Q{{\\E");
-        for (String block : blocks) {
-            block = block.trim();
-            if (block.endsWith("}}")) {
-                block = block.substring(0, block.length() - 2);
-            }
-            String[] fields = block.split("~~", -1);
-            if (fields.length >= 6 && fields[0].isEmpty()) {
-                // skip first if it's empty due to leading ~~ after {{
-                fields = java.util.Arrays.copyOfRange(fields, 1, fields.length);
-            }
-            if (fields.length >= 5) {
-                ArrayBlock1 ab = new ArrayBlock1();
-                ab.aBlock1 = fields[0];
-                ab.aBlock2 = fields[1];
-                ab.aBlock3 = fields[2];
-                ab.aBlock4 = fields[3];
-                ab.aBlock5 = fields[4];
-                list.add(ab);
-            }
-
+            String[] parts = token.split("\\|", -1); // Keep empty fields
+            ArrayBlock1 ab1 = new ArrayBlock1();
+            ab1.setABlock1(parts.length > 0 ? parts[0] : "");
+            ab1.setABlock2(parts.length > 1 ? parts[1] : "");
+            ab1.setABlock3(parts.length > 2 ? parts[2] : "");
+            ab1.setABlock4(parts.length > 3 ? parts[3] : "");
+            ab1.setABlock5(parts.length > 4 ? parts[4] : "");
+            list.add(ab1);
         }
 
         return list;
     }
 
+    private String getField(String[] fields, int index) {
+        return index < fields.length ? fields[index] : "";
+    }
+
     @Override
     public String format(Object value) {
-        return null; // Not used in unmarshalling
+        // Optional: serialization logic if needed
+        return null;
     }
 
     @Override

@@ -9,8 +9,10 @@
         <parser class ="org.example.parser.CustomDelimitedParserFactory">
           <property name="customDelimiter" value="~~"/>
         </parser>
+
         <typeHandler class="org.example.handler.ArrayBlock1Handler" name="arrayBlock1Handler"/>
         <typeHandler class="org.example.handler.ArrayBlock2Handler" name="arrayBlock2Handler"/>
+
         <record name="HeaderBlock" class="org.example.code.HeaderBlock">
             <field name="field1" minOccurs="0" nillable="true"/>
             <field name="field2" minOccurs="0" nillable="true"/>
@@ -152,8 +154,13 @@
                 <field name="nBlock14" minOccurs="0" nillable="true"/>
                 <field name="nBlock15" minOccurs="0" nillable="true"/>
             </segment>
+
+<!--            <field name="markerA" literal="A" minOccurs="0" nillable="true"/>-->
             <field name="arrayBlock1" lazy="true" typeHandler="arrayBlock1Handler" type="java.util.List" minOccurs="0" nillable="true"/>
+
+<!--            <field name="markerB" literal="B" minOccurs="0" nillable="true"/>-->
             <field name="arrayBlock2" lazy="true" typeHandler="arrayBlock2Handler" type="java.util.List" minOccurs="0" nillable="true"/>
+
             <segment name="nestedBlock2" class="org.example.code.NestedBlock2" minOccurs="0" nillable="true">
                 <!-- Add NestedBlock2 fields here -->
                 <field name="n2Block1" minOccurs="0" nillable="true"/>

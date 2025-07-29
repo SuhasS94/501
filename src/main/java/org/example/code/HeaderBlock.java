@@ -1,8 +1,11 @@
 package org.example.code;
 
-
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class HeaderBlock {
 
     public String field1;
